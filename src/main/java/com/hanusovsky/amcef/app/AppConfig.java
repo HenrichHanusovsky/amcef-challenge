@@ -2,13 +2,11 @@ package com.hanusovsky.amcef.app;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.hanusovsky.amcef.app.dto.PostCreate;
 import com.hanusovsky.amcef.app.entity.Post;
 import com.hanusovsky.amcef.external.dto.ExternalPost;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
 import org.modelmapper.convention.MatchingStrategies;
-import org.modelmapper.spi.MatchingStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

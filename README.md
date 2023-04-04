@@ -10,6 +10,7 @@ Amcef project is Java application used to showcase the skills in Java developmen
 - Spring Boot
 - Docker
 - Maven
+- Lombok
 
 ### Running application
 

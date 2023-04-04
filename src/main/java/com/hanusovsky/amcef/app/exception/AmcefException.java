@@ -5,10 +5,11 @@ import org.springframework.http.HttpStatus;
 
 import java.util.Map;
 
-public class AmcefException extends RuntimeException{
+public class AmcefException extends RuntimeException {
 
     @Getter
     private final Map.Entry<HttpStatus, String> code;
+
     public AmcefException(Map.Entry<HttpStatus, String> code) {
         this(code, null);
     }

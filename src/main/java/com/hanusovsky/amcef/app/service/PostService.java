@@ -5,16 +5,15 @@ import com.hanusovsky.amcef.app.dto.PostUpdate;
 import com.hanusovsky.amcef.app.entity.Post;
 import com.hanusovsky.amcef.app.exception.AmcefException;
 import com.hanusovsky.amcef.app.exception.AmcefExceptionCode;
+import com.hanusovsky.amcef.app.repository.PostRepository;
 import com.hanusovsky.amcef.external.dto.ExternalPost;
 import com.hanusovsky.amcef.external.dto.ExternalUser;
-import com.hanusovsky.amcef.external.service.ExternalService;
-import com.hanusovsky.amcef.app.repository.PostRepository;
+import com.hanusovsky.amcef.external.service.ExternalServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PostService {
@@ -23,12 +22,12 @@ public class PostService {
     private PostRepository postRepository;
 
     @Autowired
-    private ExternalService externalService;
+    private ExternalServiceImpl externalService;
 
     @Autowired
     private ModelMapper modelMapper;
 
-    public Post addPost(PostCreate postPayload){
+    public Post addPost(PostCreate postPayload) {
         Post post = modelMapper.map(postPayload, Post.class);
         ExternalUser user = this.externalService.getUser(post.getUserId());
         if (user == null) {
@@ -44,7 +43,7 @@ public class PostService {
     }
 
     public Post updatePost(long postId, PostUpdate postPayload) {
-        Post post = this.postRepository.findById(postId).orElseThrow( () -> new AmcefException(AmcefExceptionCode.POST_NOT_FOUND));
+        Post post = this.postRepository.findById(postId).orElseThrow(() -> new AmcefException(AmcefExceptionCode.POST_NOT_FOUND));
         this.modelMapper.map(postPayload, post);
         return this.postRepository.save(post);
     }
@@ -59,7 +58,7 @@ public class PostService {
     }
 
     private Post fetchFromExternalServiceAndSave(long postId) {
-        ExternalPost post =  this.externalService.getPost(postId);
+        ExternalPost post = this.externalService.getPost(postId);
         if (post == null) {
             return null;
         }

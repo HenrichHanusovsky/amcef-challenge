@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ExternalCompany {
+
     private String name;
     private String catchPhrase;
     private String bs;
