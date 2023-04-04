@@ -5,6 +5,10 @@ import org.springframework.http.HttpStatus;
 
 import java.util.Map;
 
+
+/**
+ * Custom exception used for Amcef application related errors
+ */
 public class AmcefException extends RuntimeException {
 
     @Getter
