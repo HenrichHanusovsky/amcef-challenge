@@ -1,4 +1,4 @@
-package com.hanusovsky.external.dto;
+package com.hanusovsky.amcef.external.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class ExternalUser {
     private int id;
     private String name;
     private String email;
-    private Address address;
+    private ExternalAddress address;
     private String phone;
     private String website;
-    private Company company;
+    private ExternalCompany company;
 }

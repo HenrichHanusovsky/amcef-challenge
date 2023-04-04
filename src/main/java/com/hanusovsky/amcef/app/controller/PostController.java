@@ -1,9 +1,8 @@
-package com.hanusovsky.amcef.controller;
+package com.hanusovsky.amcef.app.controller;
 
-import com.hanusovsky.amcef.entity.Post;
-import com.hanusovsky.amcef.service.PostService;
+import com.hanusovsky.amcef.app.entity.Post;
+import com.hanusovsky.amcef.app.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

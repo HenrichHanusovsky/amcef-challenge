@@ -1,4 +1,4 @@
-package com.hanusovsky.amcef.entity;
+package com.hanusovsky.amcef.app.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
